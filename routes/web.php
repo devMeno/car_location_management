@@ -19,5 +19,5 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->name('admin.')->group(function(){
-    Route::resource('car',CarController::class);
+    Route::resource('car',CarController::class)->except('show');
 });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cars;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -12,7 +13,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.index',['cars'=>Cars::orderBy('created_at','desc')]);
     }
 
     /**
@@ -20,7 +21,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.form',['car'=>new Cars()]);
     }
 
     /**

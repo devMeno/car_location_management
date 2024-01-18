@@ -31,7 +31,8 @@ class CarFormRequest extends FormRequest
             'color'=>['required','min:3'],
             'price'=>['required','integer','min:'],
             'available'=>['required','boolean'],
-            'image_path'=>['required','min:8'],
+            'image1_path'=>['required','min:8'],
+            'image2_path'=>['required','min:8'],
         ];
     }
 }
