@@ -18,10 +18,11 @@ return new class extends Migration
             $table->string('fuel');
             $table->string('transmission');
             $table->string('description');
-            $table->string('places');
+            $table->integer('places');
             $table->string('color');
-            $table->string('price');
+            $table->integer('price');
             $table->string('available');
+            $table->string('image_path');
             $table->timestamps();
         });
     }
