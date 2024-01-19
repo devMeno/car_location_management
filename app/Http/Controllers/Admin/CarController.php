@@ -32,6 +32,12 @@ class CarController extends Controller
     {
         $fuel = $request->input('fuel');
         $transmission = $request->input('transmission');
+        if($request->hasFile('image1_path') && $request->hasFile('image2_path')){
+            $image1_path = $request->file('image1_path')->store('public/images/cars');
+            $image2_path = $request->file('image2_path')->store('public/images/cars');
+        }
+
+
         $new_car = Cars::create([
             'brand'=>$request->validated()['brand'],
             'model'=>$request->validated()['model'],
@@ -42,8 +48,8 @@ class CarController extends Controller
             'color'=>$request->validated()['color'],
             'price'=>$request->validated()['price'],
             'available'=>$request->validated()['available'],
-            'image1_path'=>$request->validated()['image1_path'],
-            'image2_path'=>$request->validated()['image2_path'],
+            'image1_path'=>$image1_path,
+            'image2_path'=>$image2_path,
 
         ]);
 
@@ -73,6 +79,11 @@ class CarController extends Controller
     {
         $fuel = $request->input('fuel');
         $transmission = $request->input('transmission');
+        if($request->hasFile('image1_path') && $request->hasFile('image2_path')){
+            $image1_path = $request->file('image1_path')->store('public/images/cars');
+            $image2_path = $request->file('image2_path')->store('public/images/cars');
+        }
+
         $car->update([
             'brand'=>$request->validated()['brand'],
             'model'=>$request->validated()['model'],
@@ -83,8 +94,8 @@ class CarController extends Controller
             'color'=>$request->validated()['color'],
             'price'=>$request->validated()['price'],
             'available'=>$request->validated()['available'],
-            'image1_path'=>$request->validated()['image1_path'],
-            'image2_path'=>$request->validated()['image2_path'],
+            'image1_path'=>$image1_path,
+            'image2_path'=>$image2_path,
         ]);
 
         return to_route('admin.car.index')->with('success','Car modified successfully!');

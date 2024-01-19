@@ -51,7 +51,7 @@
 
     <div class="row  mx-auto my-4 align-items-center" style="width: 55%;">
         <div class="col text-end">
-            <h1 class="fw-bolder display-3">Services</h1>
+            <h1 class="fw-bolder display-4">Services</h1>
         </div>
         <div class="col">
             <p>We invite you to try our services and we personnally guarantee that you will be completely satisfied</p>
@@ -64,14 +64,14 @@
                 @include('shared.card', [
                     'title' => 'Title',
                     'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
                 ])
             </div>
             <div class="col">
                 @include('shared.card', [
                     'title' => 'Title',
                     'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
                 ])
             </div>
         </div>
@@ -80,16 +80,54 @@
                 @include('shared.card', [
                     'title' => 'Title',
                     'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
                 ])
             </div>
             <div class="col">
                 @include('shared.card', [
                     'title' => 'Title',
                     'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
                 ])
             </div>
         </div>
+    </div>
+
+    <div class="row  mx-auto my-4 align-items-center" style="width: 60%">
+        <div class="col text-end">
+            <h1 class="fw-bolder display-4">Why choose us</h1>
+        </div>
+        <div class="col">
+            <p>At Carlux we pride ourselves in delivering extensive services to all of your needs with first rate customer
+                care</p>
+        </div>
+    </div>
+
+    <div class="container px-10 d-flex justify-content-between">
+        <div style="width: 200px" class="col-sm-4">
+            <div class="bg-primary rounded" style="width: 200px;height:200px"></div>
+            <h3>Titre</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
+        </div>
+        <div style="width: 200px" class="col-sm-4">
+            <div class="bg-primary rounded" style="width: 200px;height:200px"></div>
+            <h3>Titre</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
+        </div>
+        <div style="width: 200px" class="col-sm-4">
+            <div class="bg-primary rounded" style="width: 200px;height:200px"></div>
+            <h3>Titre</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
+        </div>
+        <div style="width: 200px" class="col-sm-4">
+            <div class="bg-primary rounded" style="width: 200px;height:200px"></div>
+            <h3>Titre</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
+        </div>
+    </div>
+
+    <div class="container text-center mx-auto w-50">
+        <h1 class="fw-bolder display-3">Only today 100€/day</h1>
+        <p class="w-75 mx-auto">Take advantage of our hot offers saving a significant amount when renting a limousine</p>
     </div>
 @endsection
