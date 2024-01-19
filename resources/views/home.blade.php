@@ -64,14 +64,14 @@
                 @include('shared.card', [
                     'title' => 'Title',
                     'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
                 ])
             </div>
             <div class="col">
                 @include('shared.card', [
                     'title' => 'Title',
                     'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
                 ])
             </div>
         </div>
@@ -80,14 +80,14 @@
                 @include('shared.card', [
                     'title' => 'Title',
                     'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
                 ])
             </div>
             <div class="col">
                 @include('shared.card', [
                     'title' => 'Title',
                     'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
                 ])
             </div>
         </div>

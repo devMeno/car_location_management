@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CarFormRequest;
 use App\Models\Cars;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 
 class CarController extends Controller
 {
@@ -32,11 +33,20 @@ class CarController extends Controller
     {
         $fuel = $request->input('fuel');
         $transmission = $request->input('transmission');
-        if($request->hasFile('image1_path') && $request->hasFile('image2_path')){
-            $image1_path = $request->file('image1_path')->store('public/images/cars');
-            $image2_path = $request->file('image2_path')->store('public/images/cars');
-        }
+        // if($request->hasFile('image1_path') && $request->hasFile('image2_path')){
+        //     $image1_path = $request->file('image1_path')->store('public/images/cars');
+        //     $image2_path = $request->file('image2_path')->store('public/images/cars');
 
+        //     $request->validated()['image1_path'] = $image1_path;
+        //     $request->validated()['image2_path'] = $image2_path;
+        // }
+        /** @var UploadedFile $image1 */
+        $image1 = $request->validated()['image1_path'];
+        $image1_path = $image1->store('images/cars','public');
+
+        /** @var UploadedFile $image2 */
+        $image2 = $request->validated()['image2_path'];
+        $image2_path = $image2->store('images/cars','public');
 
         $new_car = Cars::create([
             'brand'=>$request->validated()['brand'],
@@ -48,9 +58,8 @@ class CarController extends Controller
             'color'=>$request->validated()['color'],
             'price'=>$request->validated()['price'],
             'available'=>$request->validated()['available'],
-            'image1_path'=>$image1_path,
-            'image2_path'=>$image2_path,
-
+            'image1_path'=>$image1_path ,
+            'image2_path'=>$image2_path ,
         ]);
 
         return to_route('admin.car.index')->with('success','Car added successfully!');
@@ -82,6 +91,9 @@ class CarController extends Controller
         if($request->hasFile('image1_path') && $request->hasFile('image2_path')){
             $image1_path = $request->file('image1_path')->store('public/images/cars');
             $image2_path = $request->file('image2_path')->store('public/images/cars');
+
+            $request->validated()['image1_path'] = $image1_path;
+            $request->validated()['image2_path'] = $image2_path;
         }
 
         $car->update([
@@ -94,8 +106,8 @@ class CarController extends Controller
             'color'=>$request->validated()['color'],
             'price'=>$request->validated()['price'],
             'available'=>$request->validated()['available'],
-            'image1_path'=>$image1_path,
-            'image2_path'=>$image2_path,
+            'image1_path'=>$request->validated()['image1_path'],
+            'image2_path'=>$request->validated()['image2_path'],
         ]);
 
         return to_route('admin.car.index')->with('success','Car modified successfully!');

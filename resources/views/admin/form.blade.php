@@ -6,7 +6,8 @@
 
     <h1>@yield('title')</h1>
 
-    <form action="{{ route($car->exists ? 'admin.car.update' : 'admin.car.store', $car) }}" method="POST">
+    <form action="{{ route($car->exists ? 'admin.car.update' : 'admin.car.store', $car) }}" method="POST"
+        enctype="multipart/form-data">
         @csrf
         @method($car->exists ? 'PUT' : 'POST')
 
