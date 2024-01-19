@@ -13,15 +13,16 @@
             <tr>
                 <th>Brand</th>
                 <th>Model</th>
-                <th>Fuel Type</th>
-                <th>Transmission Type</th>
+                <th>Fuel</th>
+                <th>Transmission</th>
                 <th>Description</th>
-                <th>Numbers of places</th>
+                <th>Places</th>
                 <th>Color</th>
                 <th>Price</th>
                 <th>Available</th>
                 <th>Image1</th>
                 <th>Image2</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -38,6 +39,14 @@
                     <td> {{ $car->available }} </td>
                     <td> {{ $car->image1_path }} </td>
                     <td> {{ $car->image2_path }} </td>
+                    <td class="d-flex gap-1">
+                        <a href="{{ route('admin.car.edit', $car) }}" class="btn-btn-primary">Edit</a>
+                        <form action="{{ route('admin.car.destroy', $car) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button>Delete</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
