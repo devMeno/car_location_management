@@ -40,6 +40,16 @@
         </div>
     </nav>
 
+    <div class="container">
+        <div class="row">
+            @foreach ($cars as $car)
+                <div class="col">
+                    @include('shared.car_card', $car)
+                </div>
+            @endforeach
+        </div>
+    </div>
+
 
     <div class="container-fluid rounded mx-auto bg-primary mt-2" style="width: 95%; height:650px">
         <div class="mx-auto text-center pt-5" style="width: 40%;">
@@ -64,14 +74,14 @@
                 @include('shared.card', [
                     'title' => 'Title',
                     'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                                                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
                 ])
             </div>
             <div class="col">
                 @include('shared.card', [
                     'title' => 'Title',
                     'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                                                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
                 ])
             </div>
         </div>
@@ -80,14 +90,14 @@
                 @include('shared.card', [
                     'title' => 'Title',
                     'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                                                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
                 ])
             </div>
             <div class="col">
                 @include('shared.card', [
                     'title' => 'Title',
                     'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                                                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
                 ])
             </div>
         </div>

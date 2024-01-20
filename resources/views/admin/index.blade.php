@@ -8,7 +8,7 @@
         <a href="{{ route('admin.car.create') }}" class="btn btn-primary">Add a car</a>
     </div>
 
-    <table class="table table-striped mb-5">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Brand</th>
@@ -20,6 +20,8 @@
                 <th>Color</th>
                 <th>Price</th>
                 <th>Available</th>
+                <th>Image1</th>
+                <th>Image2</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -35,6 +37,8 @@
                     <td> {{ $car->color }} </td>
                     <td> {{ number_format($car->price, 0) }}€ </td>
                     <td> {{ $car->available }} </td>
+                    <td><img src="/storage/{{ $car->image1_path }}" style="width: 60px;height:60px;" alt=""></td>
+                    <td><img src="/storage/{{ $car->image2_path }}" style="width: 60px;height:60px;" alt=""></td>
                     <td class="d-flex gap-1">
                         <a href="{{ route('admin.car.edit', $car) }}" class="btn-btn-primary">Edit</a>
                         <form action="{{ route('admin.car.destroy', $car) }}" method="POST">
@@ -43,27 +47,6 @@
                             <button>Delete</button>
                         </form>
                     </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Brand</th>
-                <th>Model</th>
-                <th>Image1</th>
-                <th>Image2</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($cars as $car)
-                <tr>
-                    <td> {{ $car->brand }} </td>
-                    <td> {{ $car->model }} </td>
-                    <td> {{ $car->image1_path }} </td>
-                    <td> {{ $car->image2_path }} </td>
                 </tr>
             @endforeach
         </tbody>
