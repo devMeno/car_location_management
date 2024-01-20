@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\CarController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarController as ControllersCarController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class,'index']);
+Route::get('/', [HomeController::class,'index'])->name('goToHome');
+
+Route::get('/login',[AuthController::class,'login'])->name('auth.login');
+Route::post('/login',[AuthController::class,'doLogin']);
+Route::delete('/logout',[AuthController::class,'logout'])->name('auth.logout');
 
 Route::get('/cars', [ControllersCarController::class,'index']);
 Route::get('/cars/{slug}-{car}', [ControllersCarController::class,'show'])->name('car.show')->where([
