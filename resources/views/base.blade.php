@@ -22,11 +22,59 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+
+        .navbtn {
+            color: black
+        }
+
+        .navbtn:hover {
+            color: white
+        }
     </style>
     <title>@yield('title') | Administration</title>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-light " style="background-color: white">
+        <div class="container">
+            <a class="navbar-brand fw-bolder" href="#">Carlux Administration</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">All Cars</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Rented list</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    @auth
+                        <span class="navbar-brand">
+                            {{-- {{ Auth::user()->name }} --}}
+                            {{ Auth::admin()->name }}
+                        </span>
+                        <form action="{{ route('auth.adminlogout') }}" method="POST">
+                            @method('delete')
+                            @csrf
+
+                            <button type="submit" class="btn btn-outline-primary">Logout</button>
+                        </form>
+                    @endauth
+                    @guest
+                        <button type="button" class="btn btn-outline-dark">
+                            <a href="{{ route('auth.adminlogin') }}" class="text-decoration-none navbtn px-4">Login</a>
+                        </button>
+                    @endguest
+                </div>
+                {{-- <button type="button" class="btn btn-outline-primary">Primary</button> --}}
+            </div>
+        </div>
+    </nav>
     <div class="mx-3 mt-5">
         @if (session('success'))
             <div class="alert alert-success">
