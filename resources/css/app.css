@@ -1,0 +1,13 @@
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+/* Dans votre fichier CSS (par exemple, public/css/app.css) */
+.bg-image {
+    /* Définissez l'image de fond avec la propriété background-image */
+    background-image: url('/public/images/banner2.jpg');
+    /* Ajustez d'autres propriétés CSS selon vos besoins */
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Ajustez la hauteur selon vos besoins */
+}

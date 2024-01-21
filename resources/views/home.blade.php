@@ -56,6 +56,28 @@
         </div>
     </nav>
 
+    {{-- <div class="container">
+        <div class="row">
+            @foreach ($cars as $car)
+                <div class="col">
+                    @include('shared.car_card', $car)
+                </div>
+            @endforeach
+        </div>
+    </div> --}}
+
+
+    <div class="container-fluid rounded mx-auto bg-primary mt-2 mb-5" style="width: 95%; height:650px">
+        <div class="mx-auto text-center pt-5" style="width: 40%;">
+            <h1 class="fw-bolder display-2">Carlux Hire</h1>
+            <p class="fs-6">We offer professionnal car rental & limousine services in our range of high-end vehicles</p>
+            <button class="btn btn-dark">See all cars</button>
+        </div>
+        {{-- <img src="{{ asset('images/banner2.jpg') }}" alt="" class="bg-img"> --}}
+    </div>
+
+    <h2 class="text-center my-5">Discover our range of Mercedes</h2>
+
     <div class="container">
         <div class="row">
             @foreach ($cars as $car)
@@ -66,16 +88,7 @@
         </div>
     </div>
 
-
-    <div class="container-fluid rounded mx-auto bg-primary mt-2" style="width: 95%; height:650px">
-        <div class="mx-auto text-center pt-5" style="width: 40%;">
-            <h1 class="fw-bolder display-2">Carlux Hire</h1>
-            <p class="fs-6">We offer professionnal car rental & limousine services in our range of high-end vehicles</p>
-            <button class="btn btn-dark">See all cars</button>
-        </div>
-    </div>
-
-    <div class="row  mx-auto my-4 align-items-center" style="width: 55%;">
+    <div class="row  mx-auto my-5 align-items-center" style="width: 55%;">
         <div class="col text-end">
             <h1 class="fw-bolder display-4">Services</h1>
         </div>
@@ -88,38 +101,38 @@
         <div class="row hstack gap-4">
             <div class="col">
                 @include('shared.card', [
-                    'title' => 'Title',
-                    'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                    'title' => 'Airport Transfers',
+                    'content' =>
+                        'With additional wait time and flight tracking in case of delays, our service is optimized to make every airport transfer a breeze.',
                 ])
             </div>
             <div class="col">
                 @include('shared.card', [
-                    'title' => 'Title',
-                    'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                    'title' => 'Intercity Trips',
+                    'content' =>
+                        'Your stressfree solution for traveling between cities with drivers all over the world.',
                 ])
             </div>
         </div>
         <div class="row hstack gap-4">
             <div class="col">
                 @include('shared.card', [
-                    'title' => 'Title',
-                    'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                    'title' => 'Wedding Events',
+                    'content' =>
+                        'Our friendly and attentive service combined with attention to detail answer you can truly relax and enjoy your special day.',
                 ])
             </div>
             <div class="col">
                 @include('shared.card', [
-                    'title' => 'Title',
-                    'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quaerat pariatur repudiandae ipsa ipsum
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    porro? Quasi ea corrupti aperiam ab.',
+                    'title' => 'Business Meeting',
+                    'content' =>
+                        'Focus on your meeting with your partners, forget about the road and the car , wich will distract your thoughts.',
                 ])
             </div>
         </div>
     </div>
 
-    <div class="row  mx-auto my-4 align-items-center" style="width: 60%">
+    <div class="row  mx-auto my-5 align-items-center" style="width: 60%">
         <div class="col text-end">
             <h1 class="fw-bolder display-4">Why choose us</h1>
         </div>
@@ -132,28 +145,54 @@
     <div class="container px-10 d-flex justify-content-between">
         <div style="width: 200px" class="col-sm-4">
             <div class="bg-primary rounded" style="width: 200px;height:200px"></div>
-            <h3>Titre</h3>
+            <h5 class="my-3">Easy Online Booking</h5>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
+        </div>
+        <div style="width: 200px" class="col-sm-4">
+            <div class="bg-dark rounded" style="width: 200px;height:200px">
+                <img src="https://icones8.fr/icon/52728/conducteur" alt="">
+            </div>
+            <h5 class="my-3">Professional Drivers</h5>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
         </div>
         <div style="width: 200px" class="col-sm-4">
             <div class="bg-primary rounded" style="width: 200px;height:200px"></div>
-            <h3>Titre</h3>
+            <h5 class="my-3">Variety of Cars</h5>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
         </div>
         <div style="width: 200px" class="col-sm-4">
             <div class="bg-primary rounded" style="width: 200px;height:200px"></div>
-            <h3>Titre</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
-        </div>
-        <div style="width: 200px" class="col-sm-4">
-            <div class="bg-primary rounded" style="width: 200px;height:200px"></div>
-            <h3>Titre</h3>
+            <h5 class="my-3">Online Payment</h5>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
         </div>
     </div>
 
-    <div class="container text-center mx-auto w-50">
+    <div class="container text-center mx-auto my-5 w-50">
         <h1 class="fw-bolder display-3">Only today 100€/day</h1>
         <p class="w-75 mx-auto">Take advantage of our hot offers saving a significant amount when renting a limousine</p>
+    </div>
+
+    <div class="container row bg-light mx-auto rounded-3 mb-5">
+        <div class="col pl-4">
+            <h1 class="my-4">Cadillac Escalade</h1>
+            <div class="d-flex">
+                <ul class="vstack gap-2">
+                    <li>For upto & Passengers</li>
+                    <li>Incredible Sound System</li>
+                    <li>Fiber Optic Light</li>
+                    <li>Bar Area With Fridge</li>
+                </ul>
+                <ul class="vstack gap-2">
+                    <li>Tinted Windows</li>
+                    <li>Divider With Premium Style</li>
+                    <li>Multipurpose Designed Limo</li>
+                    <li>Chill Air Conditioning</li>
+                </ul>
+            </div>
+            <div class="btn btn-dark w-25 my-4">Reserve Now</div>
+        </div>
+        <div class="col">
+            <img src="{{ asset('images/cadillac__.png') }}" class="w-100" alt="">
+        </div>
     </div>
 @endsection
