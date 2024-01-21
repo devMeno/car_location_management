@@ -1,7 +1,11 @@
 <div style="height: 240px;">
-    <div class="row p-2 h-100 bg-light rounded">
-        <div class="col bg-primary rounded">
-            <img src="" alt="" class="img-fluid">
+    <div class="row p-2 h-100 bg-colorg rounded">
+        <div class="col rounded"
+            style="background-image:url({{ asset($img) }}); background-size: cover;background-position: center;">
+            {{-- <img src="{{ asset('images/chauffeur_ok.jpg') }}" alt="" class="img-fluid">
+            <img src="{{ asset('images/business.jpg') }}" alt="">
+            <img src="{{ asset('images/mariee.jpg') }}" alt="">
+            <img src="{{ asset('images/aeoroport.jpg') }}" alt=""> --}}
         </div>
         <div class="col">
             <h3> {{ $title }} </h3>

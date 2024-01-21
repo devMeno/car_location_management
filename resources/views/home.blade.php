@@ -2,59 +2,7 @@
 
 @section('content')
     {{-- navbar --}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <div class="navbar-nav">
-                    @auth
-                        {{ Auth::user()->name }}
-                        <form action="{{ route('auth.logout') }}" method="POST">
-                            @method('delete')
-                            @csrf
 
-                            <button type="submit" class="btn btn-outline-primary">Logout</button>
-                        </form>
-                    @endauth
-                    @guest
-                        <button type="button" class="btn btn-outline-primary">
-                            <a href="{{ route('auth.login') }}">Login</a>
-                        </button>
-                    @endguest
-                </div>
-                {{-- <button type="button" class="btn btn-outline-primary">Primary</button> --}}
-            </div>
-        </div>
-    </nav>
 
     {{-- <div class="container">
         <div class="row">
@@ -67,11 +15,13 @@
     </div> --}}
 
 
-    <div class="container-fluid rounded mx-auto bg-primary mt-2 mb-5" style="width: 95%; height:650px">
+    <div class="container-fluid rounded mx-auto mt-2 mb-5"
+        style="width: 95%; height:650px;background-image:url({{ asset('images/banner.jpg') }}); background-size: cover;
+        background-position: center;">
         <div class="mx-auto text-center pt-5" style="width: 40%;">
-            <h1 class="fw-bolder display-2">Carlux Hire</h1>
+            <h1 class="fw-bolder display-1">Carlux Hire</h1>
             <p class="fs-6">We offer professionnal car rental & limousine services in our range of high-end vehicles</p>
-            <button class="btn btn-dark">See all cars</button>
+            <button class="btn btn-dark btn-lg">See all cars</button>
         </div>
         {{-- <img src="{{ asset('images/banner2.jpg') }}" alt="" class="bg-img"> --}}
     </div>
@@ -101,6 +51,7 @@
         <div class="row hstack gap-4">
             <div class="col">
                 @include('shared.card', [
+                    'img' => 'images/aeoroport.jpg',
                     'title' => 'Airport Transfers',
                     'content' =>
                         'With additional wait time and flight tracking in case of delays, our service is optimized to make every airport transfer a breeze.',
@@ -108,6 +59,7 @@
             </div>
             <div class="col">
                 @include('shared.card', [
+                    'img' => 'images/chauffeur_ok.jpg',
                     'title' => 'Intercity Trips',
                     'content' =>
                         'Your stressfree solution for traveling between cities with drivers all over the world.',
@@ -117,6 +69,7 @@
         <div class="row hstack gap-4">
             <div class="col">
                 @include('shared.card', [
+                    'img' => 'images/mariee.jpg',
                     'title' => 'Wedding Events',
                     'content' =>
                         'Our friendly and attentive service combined with attention to detail answer you can truly relax and enjoy your special day.',
@@ -124,6 +77,7 @@
             </div>
             <div class="col">
                 @include('shared.card', [
+                    'img' => 'images/business.jpg',
                     'title' => 'Business Meeting',
                     'content' =>
                         'Focus on your meeting with your partners, forget about the road and the car , wich will distract your thoughts.',
@@ -144,24 +98,30 @@
 
     <div class="container px-10 d-flex justify-content-between">
         <div style="width: 200px" class="col-sm-4">
-            <div class="bg-primary rounded" style="width: 200px;height:200px"></div>
+            <div class="color rounded d-flex align-items-center" style="width: 200px;height:200px">
+                <img src="{{ asset('images/online-advertising.png') }}" class="w-50 h-50 d-flex mx-auto" alt="">
+            </div>
             <h5 class="my-3">Easy Online Booking</h5>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
         </div>
         <div style="width: 200px" class="col-sm-4">
-            <div class="bg-dark rounded" style="width: 200px;height:200px">
-                <img src="https://icones8.fr/icon/52728/conducteur" alt="">
+            <div class="black rounded d-flex align-items-center" style="width: 200px;height:200px">
+                <img src="{{ asset('images/chauffeur.png') }}" class="w-50 h-50 d-flex mx-auto" alt="">
             </div>
             <h5 class="my-3">Professional Drivers</h5>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
         </div>
         <div style="width: 200px" class="col-sm-4">
-            <div class="bg-primary rounded" style="width: 200px;height:200px"></div>
+            <div class="color rounded d-flex align-items-center" style="width: 200px;height:200px">
+                <img src="{{ asset('images/auto.png') }}" class="w-50 h-50 d-flex mx-auto" alt="">
+            </div>
             <h5 class="my-3">Variety of Cars</h5>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
         </div>
         <div style="width: 200px" class="col-sm-4">
-            <div class="bg-primary rounded" style="width: 200px;height:200px"></div>
+            <div class="black rounded d-flex align-items-center" style="width: 200px;height:200px">
+                <img src="{{ asset('images/paiement-securise.png') }}" class="w-50 h-50 d-flex mx-auto" alt="">
+            </div>
             <h5 class="my-3">Online Payment</h5>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi illo dicta</p>
         </div>
@@ -172,7 +132,7 @@
         <p class="w-75 mx-auto">Take advantage of our hot offers saving a significant amount when renting a limousine</p>
     </div>
 
-    <div class="container row bg-light mx-auto rounded-3 mb-5">
+    <div class="container row black mx-auto rounded-3 mb-5">
         <div class="col pl-4">
             <h1 class="my-4">Cadillac Escalade</h1>
             <div class="d-flex">
@@ -193,6 +153,82 @@
         </div>
         <div class="col">
             <img src="{{ asset('images/cadillac__.png') }}" class="w-100" alt="">
+        </div>
+    </div>
+
+    <div class="container-fluid rounded-5 footer px-5 pt-5 pb-3 mb-5" style="width: 95%;font-size:13px">
+        <div class="row mb-4">
+            <div class="col w-50">
+                <div class="row">
+                    <div class="col w-50">
+                        <img src="{{ asset('images/banner.jpg') }}" alt="" class="mb-4"
+                            style="width: 80px;height:30px"><br>
+                        <label for="email my-2">Suscribe to the newsletter</label>
+                        <div class="input-group mt-2 w-75">
+                            <input type="text" class="form-control" placeholder="Email adress"
+                                aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Send</button>
+                        </div>
+                        {{-- <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                        </input> --}}
+                    </div>
+                    <div class="col w-50 justify-content-center">
+                        <h5>Top cities</h5>
+                        <div class="">
+                            <span>New York</span><br>
+                            <span>London</span><br>
+                            <span>Berlin</span><br>
+                            <span>Los Angeles</span><br>
+                            <span>Paris</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col w-50">
+                <div class="row">
+                    <div class="col w-50 justify-content-center">
+                        <h5>Explore</h5>
+                        <div class="">
+                            <span>Intercity rides</span><br>
+                            <span>Limousine service</span><br>
+                            <span>Driver service</span><br>
+                            <span>Private car service</span><br>
+                            <span>Airport transfer</span>
+                        </div>
+                    </div>
+                    <div class="col w-50 justify-content-center">
+                        <h5>Intercity rides</h5>
+                        <div class="">
+                            <span>East Hampton - New York</span><br>
+                            <span>New York - Washington</span><br>
+                            <span>New York - Philadelphia</span><br>
+                            <span>Abu Dhabi - Dubai</span><br>
+                            <span>London - Birmingham</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="font-size:10px">
+            <div class="col" style="width: 20%">
+                <span>2023 Carlux</span>
+            </div>
+            <div class="col w-50 hstack gap-2" style="width: 40%">
+                <span><a href="#" class="text-light text-decoration-none">Term</a></span>
+                <span><a href="#" class="text-light text-decoration-none">Privacy policy</a></span>
+                <span><a href="#" class="text-light text-decoration-none">Legal notice</a></span>
+                <span><a href="#" class="text-light text-decoration-none">Accessibility</a></span>
+            </div>
+            <div class="col d-flex justify-content-end" style="width: 60%">
+                <div class="d-flex gap-2">
+                    <div class="rounded-circle bg-light" style="width: 20px;height:20px"></div>
+                    <div class="rounded-circle bg-light" style="width: 20px;height:20px"></div>
+                    <div class="rounded-circle bg-light" style="width: 20px;height:20px"></div>
+                    <div class="rounded-circle bg-light" style="width: 20px;height:20px"></div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

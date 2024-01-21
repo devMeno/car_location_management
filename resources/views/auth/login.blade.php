@@ -6,7 +6,7 @@
 
     <div class="container align-items-center">
 
-        <h2 class="text-center">Login to your account</h2>
+        <h2 class="text-center fw-bolder">Login to your account</h2>
         <div class="card w-50 mx-auto">
             <div class="card-body">
                 <form action="{{ route('auth.login') }}" method="POST" class="vstack gap-2">
@@ -22,7 +22,7 @@
                         'name' => 'password',
                         'type' => 'password',
                     ])
-                    <button class="btn btn-primary">Login</button>
+                    <button class="btn color">Login</button>
                 </form>
             </div>
         </div>
