@@ -12,6 +12,8 @@ class Admin extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $guard = 'admin';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -42,4 +44,6 @@ class Admin extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    protected $table = 'admins';
 }

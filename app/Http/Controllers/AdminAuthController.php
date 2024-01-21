@@ -6,8 +6,15 @@ use App\Http\Requests\AdminLoginResquest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class AdminAuthController extends Controller
 {
+
+    protected function guard()
+    {
+        return Auth::guard('admin');
+    }
+
     public function login(){
         return view('auth.adminLogin');
     }

@@ -56,7 +56,8 @@
                     @auth
                         <span class="navbar-brand">
                             {{-- {{ Auth::user()->name }} --}}
-                            {{ Auth::admin()->name }}
+                            {{-- {{ Auth::admin()->name }} --}}
+                            Bonjour
                         </span>
                         <form action="{{ route('auth.adminlogout') }}" method="POST">
                             @method('delete')
