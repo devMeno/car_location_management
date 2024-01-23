@@ -45,5 +45,5 @@ class Admin extends Authenticatable
         'password' => 'hashed',
     ];
 
-    protected $table = 'admins';
+    // protected $table = 'admins';
 }

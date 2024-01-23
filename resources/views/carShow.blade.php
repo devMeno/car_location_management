@@ -39,6 +39,66 @@
                 <div class="btn btn-outline-primary w-100">Rent</div>
             </div>
         </div>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button text-center bg-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Make a reservation
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <form action="{{ route('admin.car.store', $order) }}" method="POST">
+                        @csrf
+                        <div class="row mx-auto py-3" style="width: 90%">
+                            <div class="col">
+                                <label for="car">Car</label>
+                                <input class="form-control mb-2" id="car" type="text" name="user_id"
+                                    value="{{ $order->car }}" disabled>
+                            </div>
+                            <div class="col">
+                                <label for="user_id">Username</label>
+                                <input class="form-control mb-2" id="user_id" type="text" name="user_id"
+                                    value="{{ $order->user_id }}" placeholder="User1" disabled>
+                            </div>
+                            <div class="col">
+                                @include('shared.input', [
+                                    'label' => 'MTN MoMo phone number',
+                                    'name' => 'num',
+                                    'type' => 'number',
+                                    'value' => $order->num,
+                                ])
+                            </div>
+                            <div class="col">
+                                @include('shared.input', [
+                                    'label' => 'Day of reservation',
+                                    'name' => 'day',
+                                    'type' => 'date',
+                                    'value' => $order->date,
+                                ])
+                            </div>
+                            <div class="col">
+                                @include('shared.input', [
+                                    'label' => 'Number of renring days',
+                                    'name' => 'daynum',
+                                    'type' => 'number',
+                                    'value' => $order->number_of_days,
+                                ])
+                            </div>
+                            <div class="col">
+                                @include('shared.input', [
+                                    'label' => 'Number of car',
+                                    'name' => 'cars',
+                                    'type' => 'number',
+                                    'value' => $order->number_of_car,
+                                ])
+                            </div>
+                            <input type="submit" class="btn btn-primary w-100">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 @endsection

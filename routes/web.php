@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarController as ControllersCarController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,7 @@ Route::get('/cars/{slug}-{car}', [ControllersCarController::class,'show'])->name
     'car'=>'[0-9]+'
 ]);
 
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
+Route::prefix('admin')->name('admin.')->middleware(['auth:admin','verified'])->group(function(){
     Route::resource('car',CarController::class)->except('show');
+    Route::resource('order',OrderController::class)->except('show');
 });

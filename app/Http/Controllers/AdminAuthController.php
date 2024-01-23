@@ -22,7 +22,7 @@ class AdminAuthController extends Controller
     public function doLogin(AdminLoginResquest $request){
         $adminLoginInfos = $request->validated();
 
-        if(Auth::attempt($adminLoginInfos)){
+        if(Auth::guard('admin')->attempt($adminLoginInfos)){
             // dd($adminLoginInfos);
             $request->session()->regenerate();
             return redirect()->route('admin.car.index');
